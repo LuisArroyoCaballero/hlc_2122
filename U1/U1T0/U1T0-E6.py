@@ -4,6 +4,6 @@
 arrayList = []
 
 for i in range(5):
-    arrayList.append(input("Digame un número: "))
+    arrayList.append(float(input("Digame un número: ")))
     
 print(arrayList)
