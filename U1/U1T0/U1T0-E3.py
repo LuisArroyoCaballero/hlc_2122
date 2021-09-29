@@ -6,3 +6,7 @@
 print("Nombre", end = " ** ")
 print("Es", end = " ** ")
 print("Ignatius")
+
+# La otra formato
+
+print("Nombre","Es","Ignatius", sep=" ** ")
