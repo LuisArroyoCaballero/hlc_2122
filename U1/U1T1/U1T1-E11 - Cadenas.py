@@ -10,5 +10,9 @@
 
 str1 = "ChemaDuran"
 
-for i in range(len(str1)):
-    print(str1[(i*-1)-1], end="")
+print(str1[::-1])
+
+# Mi manera de hacerlo
+
+# for i in range(len(str1)):
+#     print(str1[(i*-1)-1], end="")

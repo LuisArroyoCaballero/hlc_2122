@@ -15,8 +15,16 @@ s1 = "Abc"
 s2 = "Xyz"
 s3 = ""
 
+s2 = s2[::-1]
 for i in range(len(s1)):
     s3 += s1[i]
-    s3 += s2[(i*-1-1)]
+    s3 += s2[i]
+
+
+# Mi primera manera de hacerlo
+
+# for i in range(len(s1)):
+#     s3 += s1[i]
+#     s3 += s2[(i*-1-1)]
     
 print(s3)

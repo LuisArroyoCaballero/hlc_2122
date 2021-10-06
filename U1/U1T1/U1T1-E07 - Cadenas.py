@@ -20,13 +20,20 @@
 
 # Falso
 
-s1 = "hDf"
+s1 = "hD"
 s2 = "ChemaDuran"
 comprobador = True
 
 for i in s1:
-    if s2.count(i) == 0:
+    if (i not in s2):
         comprobador = False
-        break
+
+# Mi manera de hacerlo
+
+
+# for i in s1:
+#     if s2.count(i) == 0:
+#         comprobador = False
+#         break
 
 print(comprobador)
