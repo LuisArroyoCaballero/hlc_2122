@@ -16,14 +16,9 @@ str_list = ["Chema", "Alejandro", "", "Juan Diego", None, "Diana", ""]
 
 
 # Con el metodo REMOVE
-
-for i in range(str_list.count(None)):
-    str_list = str_list.remove(None)
-    
-print(str_list.count(""))
-for i in range(str_list.count("")):
-    print(i)
-    str_list = str_list.remove("")
-    
+      
+for i in str_list:
+    if not i:
+        str_list.remove(i)
 
 print(str_list)
