@@ -1,0 +1,3 @@
+.\myvenv\Scripts\activate -> Activar entorno virtual
+
+python manage.py runserver -> Arrancar el entorno virtual

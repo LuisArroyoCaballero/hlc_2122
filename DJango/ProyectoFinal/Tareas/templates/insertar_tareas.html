@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FCT - Tareas</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <div>
+      <div class="row">
+        <div>
+          <div>
+            <form action="{{action}}" method="POST">
+              {% csrf_token %}
+              <h5>Parte de tareas - user_id {{ user.id }}</h5>
+              <div>
+                <label for="fecha_parte">Día</label>
+                <input
+                  id="fecha_parte"
+                  type="date"
+                  name="fecha"
+                  value='{% if Tarea != None %}{{ Tarea.fecha|date:"Y-m-d"  }}{% endif %}'
+                />
+              </div>
+              <div>
+                <label for="horas">Horas</label>
+                <input
+                  type="range"
+                  class="form-range"
+                  value='{% if Tarea != None %}{{ Tarea.horas|floatformat:"u" }}{% endif %}'
+                  min="0"
+                  max="8"
+                  id="horas"
+                  name="horas"
+                  step="0.5"
+                />
+                <input
+                  type="hidden"
+                  id="tarea_id"
+                  value="{% if Tarea != None %}{{ Tarea.id  }}{% endif %}"
+                  name="id"
+                />
+                <h6 id="horas_value">
+                  {% if Tarea != None %}{{ Tarea.horas|floatformat:"u" }}{%
+                  endif %}
+                </h6>
+              </div>
+              <div>
+                <div>
+                  <span>Tareas</span>
+                  <textarea
+                    aria-label="Tareas"
+                    maxlength="250"
+                    rows="5"
+                    name="descripcion"
+                  >
+{% if Tarea != None %}{{ Tarea.descripcion }}{% endif %}</textarea
+                  >
+                </div>
+              </div>
+              <div>
+                <button type="submit">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
